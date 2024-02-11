@@ -3,15 +3,15 @@ import { generateLinkedList } from './index';
 describe('generateLinkedList', () => {
   // Check match by expect(...).toStrictEqual(...)
   test('should generate linked list from values 1', () => {
-    const result = generateLinkedList<number>([1, 1, 1, 1]);
+    const result = generateLinkedList<number>([1, 2, 3, 4]);
     expect(result).toStrictEqual({
       value: 1,
       next: {
-        value: 1,
+        value: 2,
         next: {
-          value: 1,
+          value: 3,
           next: {
-            value: 1,
+            value: 4,
             next: {
               value: null,
               next: null,
@@ -24,7 +24,7 @@ describe('generateLinkedList', () => {
 
   // Check match by comparison with snapshot
   test('should generate linked list from values 2', () => {
-    const result = generateLinkedList<number>([2, 2, 2, 2]);
+    const result = generateLinkedList<number>([4, 2, 2, 1]);
     expect(result).toMatchSnapshot();
   });
 });
